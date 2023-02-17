@@ -15,6 +15,8 @@ const Home: NextPageWithLayout<IHome> = ({ postsMeta }) => {
   return (
     <>
       <SEO />
+      {/* hero */}
+      {/* web about */}
       <FeaturedPost />
       <LatestPosts postsMeta={postsMeta} />
       <CTA />
