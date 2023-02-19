@@ -1,5 +1,8 @@
 import MainLayout from '@/components/layout';
 import CTA from '@/components/sections/cta';
+import Hero from "@/components/sections/hero"
+import HeroAlt from "@/components/sections/heroAlt"
+import WebAbout from '@/components/sections/webAbout';
 import FeaturedPost from '@/components/sections/featuredPost';
 import LatestPosts from '@/components/sections/latestPosts';
 import SEO from '@/components/sections/seo';
@@ -14,12 +17,14 @@ interface IHome {
 const Home: NextPageWithLayout<IHome> = ({ postsMeta }) => {
   return (
     <>
-      <SEO />
-      {/* hero */}
-      {/* web about */}
-      <FeaturedPost />
-      <LatestPosts postsMeta={postsMeta} />
-      <CTA />
+      <main className='px-28'>
+        <SEO />
+        <HeroAlt />
+        {/* <WebAbout/> */}
+        <FeaturedPost />
+        <LatestPosts postsMeta={postsMeta} />
+        {/* <CTA /> */}
+      </main>
     </>
   );
 };

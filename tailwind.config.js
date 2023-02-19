@@ -7,31 +7,19 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      fontSize: {
-        headinglg: [
-          '4.8rem',
-          { lineHeight: '1.1' },
-          { letterSpacing: '-0.02em' },
-        ],
-        headingmd: [
-          '2.88rem',
-          { lineHeight: '1.2' },
-          { letterSpacing: '-0.02em' },
-        ],
-        headingsm: [
-          '1.8rem',
-          { lineHeight: '1.4' },
-          { letterSpacing: '-0.02em' },
-        ],
-        headingxs: [
-          '1.08rem',
-          { lineHeight: '1.4' },
-          { letterSpacing: '-0.02em' },
-        ],
-        subheading: ['1.44rem', { lineHeight: '1.35' }],
-        body: ['16px', { lineHeight: '1.4' }, { letterSpacing: '0' }],
-      },
+      colors: {
+        creamy: "rgb(235, 224, 208)",
+        beige: "rgb(244, 239, 235)",
+        sand: "#D3C6AD",
+        charcoal: "rgb(33, 31, 28)",
+      }
     },
+    fontFamily: {
+      'sans': ['Inter', 'sans'],
+      'roboto': ['Roboto Mono', 'monospace'],
+      'libre': ['Libre Baskerville', 'serif'],
+      'carlo': ['montecarloregular']
+    }
   },
   plugins: [],
 };

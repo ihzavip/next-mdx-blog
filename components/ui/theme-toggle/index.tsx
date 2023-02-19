@@ -16,7 +16,7 @@ const ThemeToggle = () => {
 
     return (
       <div
-        className="flex items-center bg-slate-100 dark:bg-slate-600 cursor-pointer p-2 rounded-md"
+        className="flex items-center p-2 rounded-md cursor-pointer bg-slate-100 dark:bg-slate-600"
         onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
       >
         {currentTheme === 'dark' ? (

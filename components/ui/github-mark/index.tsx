@@ -11,7 +11,7 @@ const GitHubMark = () => {
       aria-label="GitHub"
       target="_blank"
       rel="noreferrer"
-      className="relative h-6 w-6 md:h-8 md:w-8 cursor-pointer overflow-hidden"
+      className="overflow-hidden relative w-6 h-6 cursor-pointer md:w-8 md:h-8"
     >
       <Image
         src={

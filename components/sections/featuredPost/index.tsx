@@ -3,31 +3,41 @@ import Link from 'next/link';
 
 const FeaturedPost = () => {
   return (
-    <section className="py-20">
-      <div className="container border mx-auto flex flex-col md:flex-row md:items-center gap-4 px-4 md:px-10 ">
+    <section className="pb-24">
+      <div className="flex justify-center items-center">
+        <div className='flex flex-col border md:flex-row border-charcoal'>
 
-        <div className="relative rounded-lg w-full h-96 md:h-80 lg:h-[70vh] shadow-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
-          <Image
-            src="/images/rest_5.jpg"
-            layout="fill"
-            alt="Featured Post"
-            objectFit="cover"
-          />
+          <div className="overflow-hidden relative w-96 h-96 md:h-80 lg:h-[70vh]">
+            <Image
+              src="/images/rest_5.jpg"
+              layout="fill"
+              alt="Featured Post"
+              objectFit="cover"
+              priority={true}
+            />
+          </div>
+          <div className="flex flex-col gap-9 justify-center py-6 px-10 h-full text-center lg:py-12 max-w-[24rem]">
+            <div className="space-y-2">
+              <h3 className="text-2xl font-normal text-black">Just Give Up It's Meaningless</h3>
+              <p className="text-[10px] font-roboto text-charcoal/80">
+                10 Feb 2023
+              </p>
+            </div>
+            <p className="text-left text-sm font-light leading-[150%]">
+              Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
+            </p>
+
+            <Link href="/posts/food-for-software-devs" prefetch={false}>
+              <button
+                type="button"
+                className="text-sm underline uppercase text-black/90 decoration-black font-roboto underline-offset-8 tracking-[.2em]"
+              >
+                Baca
+              </button>
+            </Link>
+          </div>
+
         </div>
-        <div className="w-full max-w-xs pb-6 md:pb-0">
-          <h2 className="text-2xl font-bold">
-            Code Fuel: The Importance of Food for Software Developers
-          </h2>
-          <p>January 01, 2023</p>
-
-
-          <Link href="/posts/food-for-software-devs" prefetch={false}>
-            <a className="rounded-lg py-2 px-4 text-white bg-pink-700 mt-10">
-              Read More
-            </a>
-          </Link>
-        </div>
-
       </div>
     </section >
 

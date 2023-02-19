@@ -5,34 +5,28 @@ import Link from 'next/link';
 
 const menuItems = [
   { label: 'Home', link: '/' },
-  { label: 'Components', link: '/' },
-  { label: 'Showcase', link: '/' },
-  { label: 'Next.js', link: '/' },
+  { label: 'Articles', link: '/' },
+  { label: 'About', link: '/' },
 ];
 
 const Header = () => {
   return (
-    <section className="brand-white border-b-2 border-slate-200 dark:border-slate-600">
-      <div className="container mx-auto flex flex-wrap items-center justify-between p-4">
+    <section className="font-light text-xs tracking-widest ">
+      <div className="container flex flex-wrap justify-between items-center py-10 mx-auto">
         <Logo />
 
         {/* menu */}
         <div className="flex items-center space-x-4">
-          <div className="hidden lg:flex items-center border-r-2">
+          <div className="hidden items-center lg:flex">
             {menuItems.map((item, i) => (
               <div className="mr-2" key={i}>
                 <Link href={item.link} prefetch={false}>
-                  <a className="inline-block px-4 text-md font-medium no-underline rounded-md dark:text-gray-200 hover:text-primary focus:text-primary">
+                  <a className="inline-block px-4 ">
                     {item.label}
                   </a>
                 </Link>
               </div>
             ))}
-          </div>
-
-          <div className="flex items-center space-x-2">
-            <GitHubMark />
-            <ThemeToggle />
           </div>
         </div>
       </div>

@@ -1,21 +1,19 @@
-import Logo from '@/components/brand/logo';
+// import Logo from '@/components/brand/logo';
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-200 dark:bg-slate-800 py-4">
-      <div className="container mx-auto min-h-[15vh] md:min-h-fit flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-2">
-        <Logo />
-        <div>Copyright &copy; {new Date().getFullYear()}</div>
+    <footer className="">
+      <div className="flex flex-col justify-between items-center px-4 mx-auto md:flex-row md:px-10 py-8 font-libre font-light tracking-[0.2em] uppercase text-charcoal text-[10px]">
 
-        <div className="social">
+        <div className="">Copyright &copy; ihza hasibuan {new Date().getFullYear()}  </div>
+
+        <div className="">
           <a
-            href="https://github.com/eric-ricky/nextjs-mdx-blog-starter"
-            aria-label="GitHub"
-            target="_blank"
-            rel="noreferrer"
-            className="headingxs hover:underline"
+            href="mailto:hasibuan-ihza@gmail.com"
+            aria-label="email"
+            className="hover:underline"
           >
-            Get it on GitHub
+            hasibuan-ihza@gmail.com
           </a>
         </div>
       </div>

@@ -29,18 +29,18 @@ const PostPage: NextPageWithLayout<IPostPage> = ({ post }) => {
       <SEO title={`/images/${post.meta.title}`} urlImage={post.meta.image} />
 
       <section className="py-10">
-        <div className="container mx-auto px-4 md:px-20">
+        <div className="container px-4 mx-auto md:px-20">
           <div
             onClick={() => router.back()}
             className="flex items-center space-x-2 cursor-pointer hover:underline"
           >
             <ChevronLeftIcon className="h-4" />
-            <span className="text-md font-semibold">Go back</span>
+            <span className="font-semibold text-md">Go back</span>
           </div>
 
-          <div className="px-8 md:px-44 pb-20">
+          <div className="px-8 pb-20 md:px-44">
             <div className="py-10">
-              <p className="text-sm mb-2">
+              <p className="mb-2 text-sm">
                 {post.meta.date.split(' ').slice(0, 4).join(' ')}
               </p>
               <h1 className="text-2xl font-bold">{post.meta.title}</h1>
