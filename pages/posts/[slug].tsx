@@ -14,6 +14,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeSlug from 'rehype-slug';
 import { IPostMeta } from 'types';
+import Image from 'next/image'
 
 interface IPostPage {
   post: {
@@ -27,31 +28,38 @@ const PostPage: NextPageWithLayout<IPostPage> = ({ post }) => {
   return (
     <>
       <SEO title={`/images/${post.meta.title}`} urlImage={post.meta.image} />
-
-      <section className="py-10">
-        <div className="container px-4 mx-auto md:px-20">
+      <section className="py-10 px-10">
+        <div className="px-4 mx-auto">
           <div
             onClick={() => router.back()}
             className="flex items-center space-x-2 cursor-pointer hover:underline"
           >
             <ChevronLeftIcon className="h-4" />
-            <span className="font-semibold text-md">Go back</span>
+            <span className="font-normal text-base tracking-wider">Go back</span>
           </div>
-
-          <div className="px-8 pb-20 md:px-44">
-            <div className="py-10">
-              <p className="mb-2 text-sm">
+          <div className="px-8 pb-20 ">
+            <div className="py-16">
+              <h1 className="tracking-wider mb-28 font-light leading-[100%] text-6xl text-center mx-auto">{post.meta.title}</h1>
+              <p className="mb-2 italic font-normal text-[10px] tracking-widest text-charcoal/80">
                 {post.meta.date.split(' ').slice(0, 4).join(' ')}
               </p>
-              <h1 className="text-2xl font-bold">{post.meta.title}</h1>
+              <div className="overflow-hidden relative w-full h-96 mb-5">
+                <Image
+                  src={`${post.meta.image || '/images/fast-next-js.png'}`}
+                  alt="Some random blog"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
             </div>
-
-            <MDXRemote {...post.source} components={MDXComponents} />
+            <div className='mt-16 font-light leading-7 tracking-wider text-base max-w-2xl text-left mx-auto'>
+              <MDXRemote {...post.source} />
+            </div>
+            {/* <MDXRemote {...post.source} components={MDXComponents} /> */}
           </div>
         </div>
       </section>
 
-      <CTA />
     </>
   );
 };

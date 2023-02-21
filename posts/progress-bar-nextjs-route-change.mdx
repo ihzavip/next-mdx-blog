@@ -1,5 +1,5 @@
 ---
-title: Next JS- How To Build A Simple Progress Bar In Next.js To Tell Users That They Are Changing Routes
+title: A simple progress Bar In Next
 tags:
   - Nextjs
   - Router
@@ -7,15 +7,22 @@ tags:
   - Single Page Applications
   - Reactjs
 date: 2022-07-06
-excerpt: If you’re building a Next.js application, you’ve probably noticed that when you change routes it might take a couple of minutes, especially for pages that make calls to an API to get some data.
+excerpt: you’ve probably noticed that when you change routes it might take a couple of minutes.
 image: '/images/progress_bar_nextjs_route_change.png'
 ---
 
+
 If you’re building a Next.js application, you’ve probably noticed that when you change routes it might take a couple of minutes, especially for pages that make calls to an API to get some data.
+
+<br/>
 
 This is because, different from a static application created with say create-react-app where your app will change pages really quickly and the data loads later, a server-side rendered app may take some time to change pages since it first makes a call to the server to get the data before the page is rendered.
 
+<br/>
+
 It might feel weird for a user to click something and nothing happens. So in this article, we will learn how to build a simple progress bar to indicate to the users that they are changing routes.
+
+<br/>
 
 ### Installing dependencies
 
@@ -27,6 +34,8 @@ or
 Yarn add @tanem/react-nprogress
 ```
 
+<br/>
+
 **Note:**
 
 This article assumes that you know how to create a basic Next.Js Application. If you don’t yet, check out [Nextjs.org](https://nextjs.org)
@@ -35,6 +44,8 @@ We’ll also be using Material UI components. Check out the official [mui.com](h
 ## The Bar Component
 
 This will be the UI component that will act as our progress bar. It accepts two props, animationDuration and progress, both of which will be used to style the component based on the route change progress.
+
+<br/>
 
 ```jsx
 import {Box} from “@mui/material”;
@@ -57,9 +68,13 @@ const Bar = ({animationDuration, progress}) => (
 export default Bar;
 ```
 
+<br/>
+
 ## The Container Component
 
 This will be our wrapper. It accepts as props, animationDuration, isFinished and children.
+
+<br/>
 
 ```jsx
 import {Box} from “@mui/material”;
@@ -79,9 +94,13 @@ const Container = ({animationDuration, isFinished, children}) => (
 export default Container
 ```
 
+<br/>
+
 ## Bringing the progress together — Progress Component
 
 Here we will bring the bar and the container together to finalize our progress indicator. It accepts a prop, isAnimating, which will be passed to useNProgress from react-nprogress package to give us animationDuration, isFinished and progress.
+
+<br/>
 
 ```jsx
 import { useNProgress } from '@tanem/react-nprogress';
@@ -102,10 +121,12 @@ const Progress = ({ animationDuration, isFinished, children }) => {
 
 export default Progress;
 ```
+<br/>
 
 ## Finally in \_app.js
-
 We can listen to different events happening inside the Next.js Router, which will tell us the progress of the route change.
+
+<br/>
 
 ```jsx
 import { useEffect, useState } from 'react';
@@ -138,6 +159,8 @@ function MyApp({ Component, pageProps }) {
 }
 export default MyApp;
 ```
+
+<br/>
 
 ## Conclusion
 

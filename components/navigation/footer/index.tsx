@@ -9,11 +9,11 @@ const Footer = () => {
 
         <div className="">
           <a
-            href="mailto:hasibuan-ihza@gmail.com"
+            href="mailto:hasibuanihza@gmail.com"
             aria-label="email"
             className="hover:underline"
           >
-            hasibuan-ihza@gmail.com
+            hasibuanihza@gmail.com
           </a>
         </div>
       </div>

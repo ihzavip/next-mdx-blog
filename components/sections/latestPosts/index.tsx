@@ -33,8 +33,10 @@ const LatestPosts: React.FC<ILatestPosts> = ({ postsMeta }) => {
               </div>
             </div>
           ))}
-          <Link href={`/posts`}>
-            <a className='mb-16 text-5xl font-light tracking-wider text-charcoal'>
+        </div>
+        <div className='mt-12'>
+          <Link href={`/articles`}>
+            <a className='text-sm bg-charcoal uppercase py-3 px-6 text-center text-white font-light tracking-wider '>
               more articles
             </a>
           </Link>
